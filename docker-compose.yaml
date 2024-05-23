@@ -36,8 +36,8 @@ services:
     volumes:
       - ./www/web1:/usr/share/nginx/html:ro
     environment:
-      - VIRTUAL_HOST=a.com
-      - LETSENCRYPT_HOST=a.com
+      - VIRTUAL_HOST=fraymamertoesquiu.edu.ar,www.fraymamertoesquiu.edu.ar
+      - LETSENCRYPT_HOST=fraymamertoesquiu.edu.ar,www.fraymamertoesquiu.edu.ar
       - LETSENCRYPT_EMAIL=jorgezarate@gmail.com
     depends_on:
       - nginx-proxy
@@ -51,8 +51,8 @@ services:
     volumes:
       - ./www/web2:/usr/share/nginx/html:ro
     environment:
-      - VIRTUAL_HOST=b.com
-      - LETSENCRYPT_HOST=b.com
+      - VIRTUAL_HOST=info.fraymamertoesquiu.edu.ar
+      - LETSENCRYPT_HOST=info.fraymamertoesquiu.edu.ar
       - LETSENCRYPT_EMAIL=jorgezarate@gmail.com
     depends_on:
       - nginx-proxy

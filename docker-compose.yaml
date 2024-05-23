@@ -13,7 +13,7 @@ web1:
   expose:
     - "80"
   volumes:
-    - /home/jzarate/fray/www/web1:/usr/share/nginx/html:ro
+    - ./www/web1:/usr/share/nginx/html:ro
   environment:
     - VIRTUAL_HOST=fraymamertoesquiu.edu.ar,www.fraymamertoesquiu.edu.ar
   
@@ -23,6 +23,6 @@ web2:
   expose:
     - "80"
   volumes:
-    - /home/jzarate/fray/www/web2:/usr/share/nginx/html:ro
+    - ./www/web2:/usr/share/nginx/html:ro
   environment:
     - VIRTUAL_HOST=info.fraymamertoesquiu.edu.ar

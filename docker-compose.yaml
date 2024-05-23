@@ -1,0 +1,28 @@
+nginx-proxy:
+  image: jwilder/nginx-proxy
+  restart: always
+  ports:
+    - "80:80"
+    - "443:443"
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+
+web1:
+  image: nginx
+  restart: always
+  expose:
+    - "80"
+  volumes:
+    - /home/jzarate/fray/www/web1:/usr/share/nginx/html:ro
+  environment:
+    - VIRTUAL_HOST=fraymamertoesquiu.edu.ar,www.fraymamertoesquiu.edu.ar
+  
+web2:
+  image: nginx
+  restart: always
+  expose:
+    - "80"
+  volumes:
+    - /home/jzarate/fray/www/web2:/usr/share/nginx/html:ro
+  environment:
+    - VIRTUAL_HOST=info.fraymamertoesquiu.edu.ar
